@@ -4,19 +4,20 @@ import { UserAuth } from "../context/AuthContext";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
-  const [paswword, setPassword] = useState("");
+  const [password, setPassword] = useState("");
   const { user, signUp } = UserAuth();
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await signUp(email, paswword);
+      await signUp(email, password);
       navigate('/')
     } catch (error) {
       console.log(error);
     }
   };
+
   return (
     <>
       <div className="w-full h-screen">
